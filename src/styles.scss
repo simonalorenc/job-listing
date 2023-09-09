@@ -1,10 +1,12 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'League Spartan', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Rubik:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
 }
 
-body{
-    background-color: rgb(219, 230, 232);
+body {
+  background-color: rgb(219, 230, 232);
 }

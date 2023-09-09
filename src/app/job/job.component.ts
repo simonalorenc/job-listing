@@ -6,25 +6,28 @@ import { Joboffer } from '../joboffer';
 @Component({
   selector: 'app-job',
   standalone: true,
-  imports: [CommonModule, JobOfferComponent],
+  imports: [
+    CommonModule, 
+    JobOfferComponent
+  ],
   template: `
     <section>
       <div class="filter-input-container">
         <input class="filter-input" type="text" placeholder="Filter by category">
       </div>
       <div class="job-offers-container">
-        <app-job-offer [jobOffer]="jobOffer"  ></app-job-offer>
+        <app-job-offer [jobOffer]="jobOffer"></app-job-offer>
       </div>
     </section>
   `,
   styleUrls: ['./job.component.scss']
 })
+
 export class JobComponent {
-  readonly baseUrl = './images';
 
   jobOffer: Joboffer = {
     id: 1,
-    image: `${this.baseUrl}/photosnap.svg`,
+    image: './assets/photosnap.svg',
     name: 'Photosnap',
     position: 'Senior Frontend Developer',
     timeCharacters: ['1d ago', 'Full time'],
