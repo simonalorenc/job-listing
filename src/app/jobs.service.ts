@@ -72,4 +72,8 @@ export class JobsService {
   getJobsOffersById(id: number): Joboffer | undefined {
     return this.jobOffersList.find(JobOffer => JobOffer.id === id)
   } 
+
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(`Job application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`);
+  }
 }

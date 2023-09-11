@@ -14,10 +14,11 @@ import { JobsService } from '../jobs.service';
   template: `
     <section>
       <div class="filter-input-container">
-        <input class="filter-input" type="text" placeholder="Filter by category">
+        <input class="filter-input" type="text" placeholder="Filter by category" #filter>
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </div>
       <div class="job-offers-container">
-        <app-job-offer *ngFor='let jobOffer of jobOffersList' [jobOffer]="jobOffer"></app-job-offer>
+        <app-job-offer *ngFor='let jobOffer of filteredJobsList' [jobOffer]="jobOffer"></app-job-offer>
       </div>
     </section>
   `,
@@ -28,9 +29,21 @@ export class JobComponent {
 
   jobOffersList: Joboffer[] = []
   jobService: JobsService = inject(JobsService)
+  filteredJobsList: Joboffer[] =[]
+
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredJobsList = this.jobOffersList;
+    }
+  
+    this.filteredJobsList = this.jobOffersList.filter(
+      jobOffer => jobOffer?.position.toLowerCase().includes(text.toLowerCase())
+    );
+  }
 
   constructor() {
     this.jobOffersList = 
   this.jobService.getAllJobsLocations()
+    this.filteredJobsList = this.jobOffersList
   }
 }
