@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JobOfferComponent } from '../job-offer/job-offer.component';
 import { Joboffer } from '../joboffer';
+import { JobsService } from '../jobs.service';
 
 @Component({
   selector: 'app-job',
@@ -16,7 +17,7 @@ import { Joboffer } from '../joboffer';
         <input class="filter-input" type="text" placeholder="Filter by category">
       </div>
       <div class="job-offers-container">
-        <app-job-offer [jobOffer]="jobOffer"></app-job-offer>
+        <app-job-offer *ngFor='let jobOffer of jobOffersList' [jobOffer]="jobOffer"></app-job-offer>
       </div>
     </section>
   `,
@@ -25,12 +26,11 @@ import { Joboffer } from '../joboffer';
 
 export class JobComponent {
 
-  jobOffer: Joboffer = {
-    id: 1,
-    image: './assets/photosnap.svg',
-    name: 'Photosnap',
-    position: 'Senior Frontend Developer',
-    timeCharacters: ['1d ago', 'Full time'],
-    categories: ['Frontend', 'JavaScript']
+  jobOffersList: Joboffer[] = []
+  jobService: JobsService = inject(JobsService)
+
+  constructor() {
+    this.jobOffersList = 
+  this.jobService.getAllJobsLocations()
   }
 }
