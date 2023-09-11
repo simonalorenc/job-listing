@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobOfferComponent } from './job-offer/job-offer.component';
 import { JobComponent } from './job/job.component';
+import { RouterModule } from '@angular/router';
+import { bootstrapApplication,provideProtractorTestingSupport } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import routeConfig from './routes';
 
 @NgModule({
   declarations: [
@@ -15,8 +19,12 @@ import { JobComponent } from './job/job.component';
     AppRoutingModule,
     JobComponent,
     JobOfferComponent,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    provideProtractorTestingSupport(),
+    provideRouter(routeConfig)
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
