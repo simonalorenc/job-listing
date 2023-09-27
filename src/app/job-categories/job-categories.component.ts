@@ -14,17 +14,3 @@ export class JobCategoriesComponent {
   @Input() jobOffer!: JobOffer;
 
 }
-
-
-// function createJobCategoriesArea(offer, parentContainer) {
-//   const jobRequirements = document.createElement('div')
-//   jobRequirements.classList.add('job-categories')
-//   parentContainer.appendChild(jobRequirements)
-//   for (let i = 0; i < offer.workCharacters.length; i++) {
-//       const oneRequirement = document.createElement('div')
-//       oneRequirement.classList.add('job-categories__category')
-//       oneRequirement.textContent += offer.workCharacters[i]
-//       oneRequirement.addEventListener('click', makeCategoriesClickable)
-//       jobRequirements.appendChild(oneRequirement)
-//   }
-// }

@@ -1,3 +1,8 @@
-<p>job-time-characters works!</p>
-
-<!-- <div class="job-info__time-place">{{ jobOffer.timeCharacters }}</div> -->
+<div class="characters-container">
+  <div
+    class="characters-container"
+    *ngFor="let character of jobOffer.timeCharacters; let last = last">
+    <div class="job-info__time-place">{{ character }}</div>
+    <ng-container *ngIf="!last">•</ng-container>
+  </div>
+</div>

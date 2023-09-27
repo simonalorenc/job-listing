@@ -6,7 +6,7 @@
     <div class="job-info">
       <div class="job-info__name">{{ jobOffer.name }}</div>
       <div class="job-info__position">{{ jobOffer.position }}</div>
-      <app-job-time-characters></app-job-time-characters>
+      <app-job-time-characters [jobOffer]="jobOffer"></app-job-time-characters>
     </div>
   </div>
   <app-job-categories [jobOffer]="jobOffer"></app-job-categories>
