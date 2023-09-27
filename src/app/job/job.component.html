@@ -1,0 +1,19 @@
+<section>
+  <div class="filter-input-container">
+    <input
+      class="filter-input"
+      type="text"
+      placeholder="Filter by category"
+      #filter
+    />
+    <button class="primary" type="button" (click)="filterResults(filter.value)">
+      Search
+    </button>
+  </div>
+  <div class="job-offers-container">
+    <app-job-offer
+      *ngFor="let jobOffer of filteredJobsList"
+      [jobOffer]="jobOffer"
+    ></app-job-offer>
+  </div>
+</section>

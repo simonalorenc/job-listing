@@ -1,4 +1,4 @@
-export interface Joboffer {
+export interface JobOffer {
     id: number;
     image: string;
     name: string;

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JobOfferComponent } from '../job-offer/job-offer.component';
-import { Joboffer } from '../joboffer';
+import { JobOffer } from '../joboffer';
 import { JobsService } from '../jobs.service';
 
 @Component({
@@ -11,25 +11,15 @@ import { JobsService } from '../jobs.service';
     CommonModule, 
     JobOfferComponent
   ],
-  template: `
-    <section>
-      <div class="filter-input-container">
-        <input class="filter-input" type="text" placeholder="Filter by category" #filter>
-        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
-      </div>
-      <div class="job-offers-container">
-        <app-job-offer *ngFor='let jobOffer of filteredJobsList' [jobOffer]="jobOffer"></app-job-offer>
-      </div>
-    </section>
-  `,
+  templateUrl: './job.component.html',
   styleUrls: ['./job.component.scss']
 })
 
 export class JobComponent {
 
-  jobOffersList: Joboffer[] = []
+  jobOffersList: JobOffer[] = []
   jobService: JobsService = inject(JobsService)
-  filteredJobsList: Joboffer[] =[]
+  filteredJobsList: JobOffer[] =[]
 
   filterResults(text: string) {
     if (!text) {

@@ -6,11 +6,9 @@
     <div class="job-info">
       <div class="job-info__name">{{ jobOffer.name }}</div>
       <div class="job-info__position">{{ jobOffer.position }}</div>
-      <div class="job-info__time-place">{{ jobOffer.timeCharacters }}</div>
+      <app-job-time-characters></app-job-time-characters>
     </div>
   </div>
-  <div class="job-categories">
-    <div class="job-categories__category">{{ jobOffer.categories }}</div>
-  </div>
+  <app-job-categories [jobOffer]="jobOffer"></app-job-categories>
   <a [routerLink]="['/details', jobOffer.id]">Read more</a>
 </section>

@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { bootstrapApplication,provideProtractorTestingSupport } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import routeConfig from './routes';
+import { JobCategoriesComponent } from './job-categories/job-categories.component';
+import { JobTimeCharactersComponent } from './job-time-characters/job-time-characters.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import routeConfig from './routes';
     AppRoutingModule,
     JobComponent,
     JobOfferComponent,
-    RouterModule
+    RouterModule,
+    JobCategoriesComponent,
+    JobTimeCharactersComponent
   ],
   providers: [
     provideProtractorTestingSupport(),

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Joboffer } from './joboffer';
+import { JobOffer } from './joboffer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JobsService {
 
-  jobOffersList: Joboffer[] = [
+  jobOffersList: JobOffer[] = [
     {
       id: 1,
       image: './assets/photosnap.svg',
@@ -65,11 +65,11 @@ export class JobsService {
     }
   ]
 
-  getAllJobsLocations(): Joboffer[] {
+  getAllJobsLocations(): JobOffer[] {
     return this.jobOffersList
   }
 
-  getJobsOffersById(id: number): Joboffer | undefined {
+  getJobsOffersById(id: number): JobOffer | undefined {
     return this.jobOffersList.find(JobOffer => JobOffer.id === id)
   } 
 

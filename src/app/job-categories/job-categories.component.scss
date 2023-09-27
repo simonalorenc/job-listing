@@ -1,0 +1,14 @@
+.job-categories {
+    display: flex;
+  
+    & &__category {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      border-radius: 3px;
+      margin-right: 15px;
+      color: rgb(79, 165, 168);
+      font-size: 13px;
+      background-color: rgb(222, 234, 236);
+    }
+  }
