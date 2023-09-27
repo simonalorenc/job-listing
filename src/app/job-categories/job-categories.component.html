@@ -1,5 +1,5 @@
 <div class="job-categories">
     <div *ngFor="let category of jobOffer.categories">
-        <div [class.job-categories__category]="true" >{{ category }}</div>
+        <a [class.job-categories__category]="true" (click)="onCategoryClick(category)" >{{ category }}</a>
     </div>
 </div>
