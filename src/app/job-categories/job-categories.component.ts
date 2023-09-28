@@ -17,7 +17,7 @@ export class JobCategoriesComponent {
   constructor(private categoryService: CategoryService) {}
 
   onCategoryClick(category: string) {
-    this.categoryService.setSelectedCategory(category)
+    this.categoryService.addCategory(category)
   }
 
 }

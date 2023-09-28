@@ -22,7 +22,7 @@ export class JobComponent implements OnInit{
   jobOffersList: JobOffer[] = []
   jobService: JobsService = inject(JobsService)
   filteredJobsList: JobOffer[] =[]
-  selectedCategory: string = ''
+  selectedCategory: string[] = []
 
   filterResults(text: string) {
     if (!text) {
@@ -41,8 +41,9 @@ export class JobComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.categoryService.selectedCategory.subscribe(category => {
-      this.selectedCategory = category
+    this.categoryService.selectedCategories.subscribe(categories => {
+      this.selectedCategory = categories
+      console.log(categories)
     })
   }
 }

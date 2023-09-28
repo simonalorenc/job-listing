@@ -5,10 +5,14 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryService {
-  selectedCategorySubject = new BehaviorSubject<string>('')
-  selectedCategory = this.selectedCategorySubject.asObservable()
+  selectedCategoriesSubject = new BehaviorSubject<string[]>([])
+  selectedCategories = this.selectedCategoriesSubject.asObservable()
 
-  setSelectedCategory(category: string) {
-    this.selectedCategorySubject.next(category) 
+  addCategory(category: string) {
+    const currentCategories = this.selectedCategoriesSubject.value
+    if(!currentCategories.includes(category)) {
+      currentCategories.push(category)
+      this.selectedCategoriesSubject.next(currentCategories)
+    }
   }
 }
