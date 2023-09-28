@@ -1,38 +1,47 @@
-.job-offers-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // width: 100%;
-    height: auto;
-    margin: 20px;
+.job-offers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // width: 100%;
+  height: auto;
+  margin: 20px;
 }
 
 .filter-input-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .filter-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  position: absolute;
+  top: 90px;
+  width: 800px;
+  background-color: white;
+  padding: 10px;
+  border: none;
+
+  & &__category {
+    color: rgb(79, 165, 168);
+    background-color: rgb(222, 234, 236);
+  }
+
+  & &__categories-container {
+    display: flex;
+  }
+
+  .job-categories__category {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    position: absolute;
-    top: 90px;
-    width: 800px;
-    background-color: white;
-    padding: 10px;
-    border: none;
-
-    & &__category {
-        color: rgb(79, 165, 168);
-        background-color: rgb(222, 234, 236);
-    }
-
-    & &__categories-container {
-        display: flex;
-
-    }
-
+    padding: 5px;
+    border-radius: 3px;
+    margin-right: 15px;
+    color: rgb(79, 165, 168);
+    font-size: 13px;
+    background-color: rgb(222, 234, 236);
+  }
 }

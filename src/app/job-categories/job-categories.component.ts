@@ -14,10 +14,10 @@ import { CategoryService } from '../category.service';
 export class JobCategoriesComponent {
   @Input() jobOffer!: JobOffer;
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService, private jobsService: JobsService) {}
 
   onCategoryClick(category: string) {
     this.categoryService.addCategory(category)
+    console.log(category)
   }
-
 }

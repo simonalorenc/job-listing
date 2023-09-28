@@ -4,11 +4,9 @@
       class="filter-input"
       type="text"
       placeholder="Filter by category"
+      [(ngModel)]="newCategory"
       #filter
     />
-    <button class="primary" type="button" (click)="filterResults(filter.value)">
-      Search
-    </button>
   </div>
   <div class="job-offers-container">
     <app-job-offer
