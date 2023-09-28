@@ -4,7 +4,6 @@
       class="filter-input"
       type="text"
       placeholder="Filter by category"
-      [(ngModel)]="selectedCategory"
       #filter
     />
     <button class="primary" type="button" (click)="filterResults(filter.value)">

@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule, 
     JobOfferComponent,
-    FormsModule
+  
   ],
   templateUrl: './job.component.html',
   styleUrls: ['./job.component.scss']
