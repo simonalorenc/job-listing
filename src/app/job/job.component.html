@@ -1,12 +1,8 @@
 <section>
   <div class="filter-input-container">
-    <input
-      class="filter-input"
-      type="text"
-      placeholder="Filter by category"
-      [(ngModel)]="newCategory"
-      #filter
-    />
+    <div class="filter-input">
+      <div *ngFor="let category of selectedCategories">{{category}}</div>
+    </div>
   </div>
   <div class="job-offers-container">
     <app-job-offer
