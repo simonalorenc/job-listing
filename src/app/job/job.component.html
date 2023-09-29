@@ -1,6 +1,6 @@
 <section>
   <div class="filter-input-container">
-    <div class="filter-input">
+    <div class="filter-input" *ngIf="selectedCategories.length > 0" >
       <div class="container">
         <div class="category-container" *ngFor="let category of selectedCategories">
           <div  [ngClass]="'filter-input__category'">{{category}}</div>

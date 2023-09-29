@@ -10,5 +10,8 @@
     </div>
   </div>
   <app-job-categories [jobOffer]="jobOffer"></app-job-categories>
-  <a [routerLink]="['/details', jobOffer.id]">Read more</a>
+  <div class="details">
+    <a  class="details__read" [routerLink]="['/details', jobOffer.id]">Read more </a>
+    <div class="arrow">→</div>
+  </div>
 </section>
