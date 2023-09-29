@@ -1,7 +1,13 @@
 <section>
   <div class="filter-input-container">
     <div class="filter-input">
-      <div *ngFor="let category of selectedCategories">{{category}}</div>
+      <div class="container">
+        <div class="category-container" *ngFor="let category of selectedCategories">
+          <div  [ngClass]="'filter-input__category'">{{category}}</div>
+          <div [ngClass]="'filter-input__category-delete'" (click)="removeCategory($event)">x</div>
+        </div>
+      </div>
+      <div *ngIf="selectedCategories.length > 0" class="clear" (click)="removeAllCategories()">clear x</div>
     </div>
   </div>
   <div class="job-offers-container">
